@@ -1,0 +1,371 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+}
+
+/* Progress bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 101;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transition: width 0.1s ease-out;
+}
+
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links button {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-links button:hover,
+.nav-links button.active {
+  color: #4ecdc4;
+  transform: scale(1.05);
+}
+
+/* Content sections */
+.content-sections {
+  position: relative;
+  z-index: 1;
+}
+
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.content-section.active .section-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section-button {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation elements */
+.animation-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.animation-element {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Animation types */
+.animation-fade-in .animation-element {
+  top: 30%;
+}
+
+.animation-slide-left .animation-element {
+  right: -100px;
+  top: 40%;
+}
+
+.animation-slide-right .animation-element {
+  left: -100px;
+  top: 60%;
+}
+
+.animation-zoom-in .animation-element {
+  transform: scale(0);
+  top: 50%;
+}
+
+.animation-bounce .animation-element {
+  top: -100px;
+}
+
+/* Active animations */
+.content-section.active.animation-fade-in .animation-element {
+  opacity: 0.8;
+  animation: float 4s infinite ease-in-out;
+}
+
+.content-section.active.animation-slide-left .animation-element {
+  animation: slideInFromRight 1s forwards, float 4s infinite ease-in-out;
+}
+
+.content-section.active.animation-slide-right .animation-element {
+  animation: slideInFromLeft 1s forwards, float 4s infinite ease-in-out;
+}
+
+.content-section.active.animation-zoom-in .animation-element {
+  animation: zoomIn 1s forwards, float 4s infinite ease-in-out;
+}
+
+.content-section.active.animation-bounce .animation-element {
+  animation: bounce 1s forwards, float 4s infinite ease-in-out;
+}
+
+/* Animation indicators */
+.animation-indicator {
+  margin-top: 2rem;
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.animation-indicator span {
+  display: inline-block;
+}
+
+.animation-fade-icon span {
+  animation: pulse 2s infinite;
+}
+
+.animation-slide-icon span {
+  animation: sideToSide 2s infinite;
+}
+
+.animation-zoom-icon span {
+  animation: pulse 2s infinite;
+}
+
+.animation-bounce-icon span {
+  animation: bounceUpDown 1s infinite;
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes sideToSide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .section-content {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  
+  .section-content h2 {
+    font-size: 2rem;
+  }
+  
+  .section-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .button-container {
+    flex-direction: column;
+  }
+  
+  .section-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
