@@ -1,4 +1,4 @@
-const AboutPage = () => {
+const About = () => {
     return (
         <div className="page" style={{ backgroundColor: '#4ecdc4' }}>
             <h1>About Berwyn</h1>
@@ -11,9 +11,8 @@ const AboutPage = () => {
                 <p>North Sydney Boys</p>
                 <p>Murray Farm Public School</p>
             </div>
-
         </div>
     )
 };
 
-export default AboutPage;
+export default About;

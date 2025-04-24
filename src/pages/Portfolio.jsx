@@ -1,4 +1,4 @@
-const PortfolioPage = () => {
+const Portfolio = () => {
     return (
         <div className="page" style={{ backgroundColor: '#06d6a0' }}>
             <h1>Portfolio Page</h1>
@@ -7,4 +7,4 @@ const PortfolioPage = () => {
     )
 };
 
-export default PortfolioPage;
+export default Portfolio;

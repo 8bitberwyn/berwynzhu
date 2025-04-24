@@ -1,12 +1,20 @@
 // src/components/Navbar.jsx
 import React from 'react';
+import '../styles/Navbar.css'
+const navbarSections = [
+    { id: 'intro', title: 'Welcome' },
+    { id: 'about', title: 'About Me' },
+    { id: 'projects', title: 'Projects' },
+    { id: 'portfolio', title: 'Portfolio' },
+    { id: 'contact', title: 'Contact' }
+];
 
-const Navbar = ({ sections, scrollToSection, currentSection }) => {
+const Navbar = ({ scrollToSection, currentSection }) => {
     return (
         <nav className="main-nav">
-            <div className="logo">Berwyn Project</div>
+            <div className="logo">Berwyn</div>
             <ul className="nav-links">
-                {sections.map((section, index) => (
+                {navbarSections.map((section, index) => (
                     <li key={section.id}>
                         <button
                             onClick={() => scrollToSection(index)}

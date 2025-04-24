@@ -1,26 +1,28 @@
 // App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import ScrollingAnimationApp from './pages/ScrollingAnimationApp';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
-import PortfolioPage from './pages/PortfolioPage';
-import ServicesPage from './pages/ServicesPage';
-import WelcomePage from './pages/WelcomePage';
+import Portfolio from './pages/Portfolio';
+import Projects from './pages/Projects';
+import Welcome from './pages/Welcome';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ScrollingAnimationApp />} />
+        <Route path="/" element={<Home />} />
         <Route path="/navbar" element={<Navbar />} />
-        <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

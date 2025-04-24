@@ -1,4 +1,4 @@
-const WelcomePage = () => {
+const Welcome = () => {
     return (
         <div className="page" style={{ backgroundColor: '#ff6b6b' }}>
             <h1>Welcome Page</h1>
@@ -7,4 +7,4 @@ const WelcomePage = () => {
     )
 };
 
-export default WelcomePage;
+export default Welcome;

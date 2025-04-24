@@ -27,113 +27,6 @@ body {
   transition: width 0.1s ease-out;
 }
 
-/* Navbar */
-.main-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links button {
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.nav-links button:hover,
-.nav-links button.active {
-  color: #4ecdc4;
-  transform: scale(1.05);
-}
-
-/* Content sections */
-.content-sections {
-  position: relative;
-  z-index: 1;
-}
-
-.content-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  text-align: center;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.content-section.active .section-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-content h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.section-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.section-button {
-  padding: 0.75rem 1.5rem;
-  background-color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.section-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
 
 /* Animation elements */
 .animation-elements {
@@ -143,84 +36,43 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
+  opacity: 0.25;
   pointer-events: none;
 }
 
 .animation-element {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   opacity: 0;
   transition: all 0.5s ease;
-}
-
-/* Animation types */
-.animation-element {
   top: 50%;
 }
 
 /* Active animations */
-.content-section.active.animation-fade-in .animation-element {
+section.active.animation-fade-in .animation-element {
   opacity: 0.9;
   animation: float 4s infinite ease-in-out;
 }
 
-.content-section.active.animation-slide-left .animation-element {
+section.active.animation-slide-left .animation-element {
   animation: slideInFromRight 1s forwards, float 4s infinite ease-in-out;
 }
 
-.content-section.active.animation-slide-right .animation-element {
+section.active.animation-slide-right .animation-element {
   animation: slideInFromLeft 1s forwards, float 4s infinite ease-in-out;
 }
 
-.content-section.active.animation-zoom-in .animation-element {
+section.active.animation-zoom-in .animation-element {
   animation: zoomIn 1s forwards, float 4s infinite ease-in-out;
 }
 
-.content-section.active.animation-bounce .animation-element {
+section.active.animation-bounce .animation-element {
   animation: bounce 1s forwards, float 4s infinite ease-in-out;
 }
 
-/* Animation indicators */
-.animation-indicator {
-  margin-top: 2rem;
-  font-size: 2rem;
-  opacity: 0.7;
-}
-
-.animation-indicator span {
-  display: inline-block;
-}
-
-.animation-fade-icon span {
-  animation: pulse 2s infinite;
-}
-
-.animation-slide-icon span {
-  animation: sideToSide 2s infinite;
-}
-
-.animation-zoom-icon span {
-  animation: pulse 2s infinite;
-}
-
-.animation-bounce-icon span {
-  animation: bounceUpDown 1s infinite;
-}
-
-/* Page styles */
-.page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
 
 /* Other keyframe animations */
 @keyframes float {
@@ -309,51 +161,5 @@ body {
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .main-nav {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  
-  .logo {
-    margin-bottom: 1rem;
-  }
-  
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .section-content {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
-  
-  .section-content h2 {
-    font-size: 2rem;
-  }
-  
-  .section-content p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .button-container {
-    flex-direction: column;
-  }
-  
-  .section-button {
-    width: 100%;
-    margin-bottom: 0.5rem;
   }
 }
