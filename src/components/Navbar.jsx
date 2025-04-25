@@ -1,11 +1,16 @@
 // src/components/Navbar.jsx
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import '../styles/Navbar.css'
+
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 const navbarSections = [
     { id: 'intro', title: 'Welcome' },
     { id: 'about', title: 'About Me' },
     { id: 'projects', title: 'Projects' },
-    { id: 'portfolio', title: 'Portfolio' },
+    // { id: 'portfolio', title: 'Portfolio' },
     { id: 'contact', title: 'Contact' }
 ];
 
@@ -24,6 +29,12 @@ const Navbar = ({ scrollToSection, currentSection }) => {
                         </button>
                     </li>
                 ))}
+                <a href="https://github.com/8bitberwyn">
+                    <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a href="https://www.linkedin.com/in/berwyn-zhu-289532200/">
+                    <FontAwesomeIcon icon={faLinkedin} />
+                </a>
             </ul>
         </nav>
     );

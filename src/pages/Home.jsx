@@ -9,6 +9,7 @@ import About from '../components/sections/About';
 import Projects from '../components/sections/Projects';
 import Portfolio from '../components/sections/Portfolio';
 import Contact from '../components/sections/Contact';
+import AnimationElement from '../components/AnimationElement';
 
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -109,8 +110,10 @@ const Home = () => {
         <Welcome addToRefs={addToRefs} handleGetStarted={handleGetStarted} />
         <About addToRefs={addToRefs} handleGetStarted={handleGetStarted} />
         <Projects addToRefs={addToRefs} handleGetStarted={handleGetStarted} />
-        <Portfolio addToRefs={addToRefs} handleGetStarted={handleGetStarted} />
+        {/* <Portfolio addToRefs={addToRefs} handleGetStarted={handleGetStarted} /> */}
         <Contact addToRefs={addToRefs} handleGetStarted={handleGetStarted} />
+        <AnimationElement />
+
       </div>
     </div>
   );

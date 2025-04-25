@@ -7,10 +7,22 @@
   overflow: hidden;
 }
 
-.welcome-content {
+.welcome-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 40px;
+  overflow: visible;
+}
+
+.welcome-left {
   width: 100%;
   z-index: 2;
-  padding: 40px;
+  flex: 1;
 }
 
 .welcome-text {
@@ -18,7 +30,7 @@
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .text-line {
@@ -38,6 +50,10 @@
 
 .text-line:nth-child(3) {
   animation-delay: 0.6s;
+}
+
+.text-line:nth-child(4) {
+  animation-delay: 1s;
 }
 
 .highlight {
@@ -62,7 +78,7 @@
 }
 
 .highlight:hover {
-  color: #ff0a3b;
+  color: #ff4f87;
 }
 
 .highlight:hover::before {
@@ -73,15 +89,12 @@
   transition: color 0.6s ease;
 }
 
-.welcome-inner {
+.welcome-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  line-height: 1.2;
   width: 100%;
-  flex-wrap: wrap;
-}
-
-.welcome-content {
+  z-index: 2;
   flex: 1;
 }
 
@@ -89,21 +102,96 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 1px solid #00f5c4;
-  opacity: 0;
+  /* border: 1px solid #00f5c4; */
   transform: scale(0.95);
-  animation: fadeInScale 1.2s ease forwards 1s;
+  animation: fadeInScale 1.2s ease forwards 0.8s;
   box-shadow: 0 0 12px rgba(0, 245, 196, 0.6), 0 0 30px rgba(0, 245, 196, 0.3);
   transition: box-shadow 0.3s ease;
-  margin: 40px;
+  margin-left: 72px;
+  margin-right: 72px;
+  opacity: 0;
   z-index: 100;
 }
 
 .portrait-image:hover {
-  border: 1.5px solid #ff0a3b;
-  box-shadow: 0 0 15px rgba(255, 10, 59, 0.8), 0 0 40px rgba(255, 10, 59, 0.5);
+  border: 1.5px solid #ff4f87;
+  box-shadow: 0 0 15px rgba(255, 10, 132, 0.8), 0 0 40px rgba(255, 10, 100, 0.5);
 }
 
+.social-icons {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInScale 1.2s ease forwards 0.8s;
+  opacity: 0;
+  margin: 8px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 3.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4f87;
+  transform: scale(1.1);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 2rem;
+  z-index: 10;
+  position: relative;
+  margin-bottom: 10px;
+  overflow: visible; 
+}
+
+.primary-button, .secondary-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  position: relative;
+  z-index: 15;
+}
+
+
+.primary-button {
+  background: linear-gradient(135deg, #00f5c4, #00b8d4);
+  color: #00062C;
+  box-shadow: 0 4px 15px rgba(0, 245, 196, 0.4);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.primary-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 20px rgba(0, 245, 196, 0.6);
+}
+
+.secondary-button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.button-icon {
+  font-size: 1rem;
+}
+
+/* Animations */
 @keyframes fadeInScale {
   to {
     opacity: 1;

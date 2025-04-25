@@ -1,0 +1,175 @@
+AnimationElement.css
+
+.animation-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999; /* Extremely low z-index to ensure it's behind everything */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.animation-element {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: -9998; /* Extremely low z-index, but one higher than container */
+  /* Animation applied via inline styles */
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+.tech-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 12px rgba(0, 245, 196, 0.5)); /* Enhanced glow effect */
+}
+
+/* Different colors for different icons - high opacity */
+.element-1 .tech-icon { color: rgba(97, 218, 251, 0.85); } /* React blue */
+.element-2 .tech-icon { color: rgba(240, 219, 79, 0.85); } /* JS yellow */
+.element-3 .tech-icon { color: rgba(55, 118, 171, 0.85); } /* Python blue/yellow */
+.element-4 .tech-icon { color: rgba(119, 123, 179, 0.85); } /* PHP purple */
+.element-5 .tech-icon { color: rgba(227, 79, 38, 0.85); } /* HTML orange */
+.element-6 .tech-icon { color: rgba(21, 114, 182, 0.85); } /* CSS blue */
+.element-7 .tech-icon { color: rgba(104, 160, 99, 0.85); } /* Node green */
+.element-8 .tech-icon { color: rgba(196, 0, 42, 0.85); } /* Angular red */
+.element-9 .tech-icon { color: rgba(65, 184, 131, 0.85); } /* Vue green */
+.element-10 .tech-icon { color: rgba(255, 255, 255, 0.85); } /* GitHub white */
+.element-11 .tech-icon { color: rgba(32, 80, 129, 0.85); } /* Bitbucket blue */
+
+/* Fading in and out - high opacity */
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0.5; /* Start with some visibility */
+  }
+  25%, 75% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* 5 DIFFERENT RANDOM FLOAT PATHS FOR VARIETY */
+
+/* Path 1 - wide circular */
+@keyframes float-path-1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+  20% {
+    transform: translate(100px, -50px) rotate(72deg) scale(1);
+  }
+  40% {
+    transform: translate(50px, -100px) rotate(144deg) scale(1.1);
+  }
+  60% {
+    transform: translate(-50px, -50px) rotate(216deg) scale(0.95);
+  }
+  80% {
+    transform: translate(-100px, 50px) rotate(288deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+/* Path 2 - figure 8 */
+@keyframes float-path-2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(80px, 40px) rotate(90deg) scale(0.9);
+  }
+  50% {
+    transform: translate(0, 100px) rotate(180deg) scale(1.1);
+  }
+  75% {
+    transform: translate(-80px, 40px) rotate(270deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+/* Path 3 - zigzag */
+@keyframes float-path-3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.95);
+  }
+  20% {
+    transform: translate(70px, -30px) rotate(60deg) scale(1);
+  }
+  40% {
+    transform: translate(-50px, -80px) rotate(120deg) scale(1.05);
+  }
+  60% {
+    transform: translate(80px, 10px) rotate(240deg) scale(0.9);
+  }
+  80% {
+    transform: translate(-60px, 60px) rotate(300deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.95);
+  }
+}
+
+/* Path 4 - diagonal */
+@keyframes float-path-4 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(120px, 120px) rotate(45deg) scale(0.9);
+  }
+  50% {
+    transform: translate(0, 150px) rotate(180deg) scale(1.05);
+  }
+  75% {
+    transform: translate(-120px, -30px) rotate(315deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+/* Path 5 - spiral */
+@keyframes float-path-5 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.9);
+  }
+  20% {
+    transform: translate(30px, 30px) rotate(120deg) scale(1);
+  }
+  40% {
+    transform: translate(60px, -20px) rotate(180deg) scale(1.1);
+  }
+  60% {
+    transform: translate(-20px, -60px) rotate(240deg) scale(0.95);
+  }
+  80% {
+    transform: translate(-70px, 10px) rotate(300deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(0.9);
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .tech-icon {
+    font-size: 3rem;
+  }
+  
+  .animation-element {
+    width: 60px;
+    height: 60px;
+  }
+}
