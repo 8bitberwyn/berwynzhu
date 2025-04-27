@@ -7,28 +7,12 @@ const Projects = ({ addToRefs, handleGetStarted }) => {
     <section 
       id="projects"
       ref={addToRefs}
-      className="animation-slide-right"
-      style={{ backgroundColor: '#6693B3' }}
+      className="animation-slide-left"
+      style={{ backgroundColor: '#00062C' }}
     >
-      <div className="section-content">
-        <h2>Projects</h2>
-        <p>Explore what we can do for you</p>
-        <div className="button-container">
-          <button className="section-button">Learn More</button>
-          <button 
-            className="section-button"
-            onClick={() => handleGetStarted('/Projects')}
-          >
-            Get Started
-          </button>
-        </div>
-        
-        <div className="animation-indicator">
-          <div className="animation-slide-icon">
-            <span>→</span>
-          </div>
-        </div>
-      </div>
+<h2 className="section-title">
+            <span className="highlight">Projects</span>
+          </h2>
       
       <AnimationElement />
     </section>

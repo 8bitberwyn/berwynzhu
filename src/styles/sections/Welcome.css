@@ -4,7 +4,7 @@
   justify-content: flex-start;
   padding: 0 10%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .welcome-inner {
@@ -23,6 +23,7 @@
   width: 100%;
   z-index: 2;
   flex: 1;
+  overflow: visible;
 }
 
 .welcome-text {
@@ -34,7 +35,7 @@
 }
 
 .text-line {
-  overflow: hidden;
+  overflow: visible;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUp 0.8s forwards;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactTyped } from 'react-typed';
 import { faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -20,8 +21,10 @@ const scrollToBottom = () => {
   });
 };
 
+const Welcome = ({ addToRefs }) => {
+  const navigate = useNavigate();
 
-const Welcome = ({ addToRefs, handleGetStarted }) => {
+
   return (
     <section
       id="intro"
@@ -42,18 +45,18 @@ const Welcome = ({ addToRefs, handleGetStarted }) => {
             />
             <span className="highlight">portfolio</span>
           </span>
-          
+
           <div className="cta-buttons text-line">
-            <button className="primary-button">
+            <button className="primary-button" onClick={() => navigate("/projects")}>
               <FontAwesomeIcon icon={faCode} className="button-icon" />
               View Projects
             </button>
             <button className="secondary-button" onClick={scrollToBottom}>
-  <FontAwesomeIcon icon={faEnvelope} className="button-icon" />
-  Contact Me
-</button>
+              <FontAwesomeIcon icon={faEnvelope} className="button-icon" />
+              Contact Me
+            </button>
 
-          </div>  
+          </div>
         </div>
 
         <div>
