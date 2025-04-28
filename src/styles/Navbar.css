@@ -71,3 +71,9 @@
   padding: 0px;
   margin: 0px;
 }
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  } 
+}
