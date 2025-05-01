@@ -38,9 +38,9 @@ const Welcome = ({ addToRefs }) => {
           <span className="text-line">I am <span className="highlight">Berwyn</span></span>
           <span className="text-line">
             <ReactTyped
-              strings={['Welcome to my ', 'Explore my ', 'Dive into my ']}
-              typeSpeed={60}
-              backSpeed={50}
+              strings={['Welcome to my', 'Explore my', 'Dive into my']}
+              typeSpeed={50}
+              backSpeed={40}
               loop
             />
             <span className="highlight">portfolio</span>
@@ -62,10 +62,10 @@ const Welcome = ({ addToRefs }) => {
         <div>
           <img src={temiImage} alt="Portrait" className="portrait-image" />
           <div className="social-icons">
-            <a href="https://github.com/8bitberwyn">
+            <a href="https://github.com/8bitberwyn" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href="https://www.linkedin.com/in/berwyn-zhu-289532200/">
+            <a href="https://www.linkedin.com/in/berwyn-zhu-289532200/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           </div>

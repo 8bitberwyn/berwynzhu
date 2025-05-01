@@ -103,7 +103,6 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  /* border: 1px solid #00f5c4; */
   transform: scale(0.95);
   animation: fadeInScale 1.2s ease forwards 0.8s;
   box-shadow: 0 0 12px rgba(0, 245, 196, 0.6), 0 0 30px rgba(0, 245, 196, 0.3);
@@ -165,7 +164,6 @@
   z-index: 15;
 }
 
-
 .primary-button {
   background: linear-gradient(135deg, #00f5c4, #00b8d4);
   color: #00062C;
@@ -208,5 +206,87 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 992px) {
+  .welcome-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .welcome-text {
+    font-size: 3rem;
+  }
+  
+  .portrait-image {
+    margin: 40px auto 20px;
+    width: 250px;
+    height: 250px;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-text {
+    font-size: 2.5rem;
+  }
+  
+  .portrait-image {
+    width: 200px;
+    height: 200px;
+    margin: 30px auto 20px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .primary-button, .secondary-button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+  }
+  
+  .social-icons a {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .welcome-text {
+    font-size: 2rem;
+  }
+  
+  .portrait-image {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .welcome-inner {
+    padding: 20px 15px;
+  }
+  
+  .primary-button, .secondary-button {
+    font-size: 0.9rem;
+  }
+  
+  .social-icons {
+    gap: 1.2rem;
+  }
+  
+  .social-icons a {
+    font-size: 2rem;
   }
 }
