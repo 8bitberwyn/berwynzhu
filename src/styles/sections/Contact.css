@@ -77,7 +77,6 @@
   overflow: visible;
 }
 
-
 .form-group {
   position: relative;
   display: flex;
@@ -151,10 +150,10 @@
   margin-top: 16px;
   align-self: center;
   box-shadow: 0 4px 15px rgba(0, 245, 196, 0.4);
-  transform: scale(0.1); /* Add initial scale state */
-  transform-origin: center;
-  position: relative; /* Add position relative */
-  will-change: transform; /* Optimize for animations */
+  animation: fadeInUp 0.8s ease forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  will-change: transform;
 }
 
 .submit-button:hover {
@@ -162,19 +161,13 @@
   box-shadow: 0 7px 20px rgba(0, 245, 196, 0.6);
 }
 
-.button-icon {
-  transition: transform 0.3s ease;
-}
-
 /* Animation for elements when they appear */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
