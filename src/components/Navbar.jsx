@@ -17,7 +17,9 @@ const navbarSections = [
 const Navbar = ({ scrollToSection, currentSection }) => {
     return (
         <nav className="main-nav">
-            <div className="logo">Berwyn</div>
+            <div onClick={() => scrollToSection(0)} className="logo">
+                Berwyn
+            </div>
             <ul className="nav-links">
                 {navbarSections.map((section, index) => (
                     <li key={section.id}>
