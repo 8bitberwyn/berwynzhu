@@ -54,8 +54,6 @@
   gap: 32px;
   list-style: none;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links button {
@@ -67,6 +65,7 @@
   font-size: 16px;
   cursor: pointer;
   padding: 8px;
+  padding-top: 12px;
 }
 
 .nav-links button:hover,
@@ -77,11 +76,11 @@
 
 .social-nav {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
 .social-nav a {
-  font-size: 24px;
+  font-size: 27px;  
   transition: all 0.3s ease;
 }
 
@@ -96,7 +95,7 @@
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 1001; /* Above the mobile menu */
+  z-index: 1001;
   color: #fff;
 }
 
@@ -217,7 +216,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #00f5c4, #00b8d4);
+    background: linear-gradient(135deg, #f50076, #00b8d4);
     transition: width 0.3s ease, left 0.3s ease;
   }
   
@@ -262,6 +261,7 @@
   }
   
   .social-nav a {
-    font-size: 24px;
+    font-size: 27px;
+    margin-left: 4px;
   }
 }

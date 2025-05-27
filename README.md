@@ -16,3 +16,8 @@ Things to do:
     - Give cat portraits some animations
     - Add radial gradient to bg to sections (Same as contact)\
     - Modularise and make it scalable
+
+Accounts:
+https://dashboard.emailjs.com/admin
+berwynzhu@gmail.com
+PIKACHU(*&&))&^
