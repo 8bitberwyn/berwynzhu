@@ -10,7 +10,6 @@ const navbarSections = [
     { id: 'intro', title: 'Welcome' },
     { id: 'about', title: 'About Me' },
     { id: 'projects', title: 'Projects' },
-    // { id: 'portfolio', title: 'Portfolio' },
     { id: 'contact', title: 'Contact' }
 ];
 
