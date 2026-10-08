@@ -71,7 +71,7 @@ const Navbar = ({ scrollToSection, currentSection }) => {
 
     return (
         <nav ref={navRef} className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
-            <div className="logo">Berwyn</div>
+            <div className="logo">Berwyn Zhu</div>
             
             {/* Mobile Hamburger Button */}
             <div className="menu-toggle" onClick={toggleMenu}>
