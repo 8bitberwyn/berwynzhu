@@ -15,21 +15,21 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import '../styles/AnimationElement.css';
 
-const AnimationElement = () => {
-  const techIcons = [
-    faReact,
-    faJs,
-    faPython,
-    faPhp,
-    faHtml5,
-    faCss3Alt,
-    faNodeJs,
-    faAngular, 
-    faVuejs,
-    faGithub,
-    faBitbucket
-  ];
+const techIcons = [
+  faReact,
+  faJs,
+  faPython,
+  faPhp,
+  faHtml5,
+  faCss3Alt,
+  faNodeJs,
+  faAngular, 
+  faVuejs,
+  faGithub,
+  faBitbucket
+];
 
+const AnimationElement = () => {
   // Instead of randomizing in render, randomize once into state
   const [iconParams, setIconParams] = useState([]);
 
@@ -46,8 +46,8 @@ const AnimationElement = () => {
 
     const initialParams = techIcons.map((_, i) => generateRandomParams(i));
     setIconParams(initialParams);
-  }, []); // <- only run once on mount
-
+  }, []); // only run once on mount
+  
   return (
     <div className="animation-elements">
       {techIcons.map((icon, i) => {

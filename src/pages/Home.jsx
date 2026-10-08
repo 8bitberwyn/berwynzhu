@@ -7,7 +7,7 @@ import '../App.css';
 import Welcome from '../components/sections/Welcome';
 import About from '../components/sections/About';
 import Projects from '../components/sections/Projects';
-import Portfolio from '../components/sections/Portfolio';
+// import Portfolio from '../components/sections/Portfolio';
 import Contact from '../components/sections/Contact';
 import AnimationElement from '../components/AnimationElement';
 
